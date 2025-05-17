@@ -51,7 +51,7 @@ public class BaseTest {
 
 	@AfterTest
 	public void afterTest() {
-//		driver.quit();
+		driver.quit();
 	}
 
 	@BeforeSuite
