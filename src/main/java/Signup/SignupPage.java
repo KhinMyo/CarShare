@@ -1,40 +1,47 @@
 package Signup;
 
 import Common.CommonPage;
+
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignupPage extends CommonPage {
 
 	public SignupPage(ChromeDriver dvr) {
 		driver = dvr;
+		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 	}
 
 	public void clickSignup() {
-		driver.findElement(By.linkText("SIGN UP")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("SIGN UP"))).click();
 	}
 
 	public void clickJoinNow() {
-		driver.findElement(By.xpath("//button[text()='Join Now' and not(@disabled)]")).click();
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath("//button[text()='Join Now' and not(@disabled)]"))).click();
 	}
 
 	public void enterFullName(String fullName) {
-		driver.findElement(By.id("fullName")).sendKeys(fullName);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("fullName"))).sendKeys(fullName);
 	}
 
 	public void enterEmail(String email) {
-		driver.findElement(By.name("username")).sendKeys(email);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("username"))).sendKeys(email);
 	}
 
 	public void enterPassword(String password) {
-		driver.findElement(By.name("password")).sendKeys(password);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("password"))).sendKeys(password);
 	}
 
 	public void enterConfirmPassword(String confirmPassword) {
-		driver.findElement(By.name("confirmPassword")).sendKeys(confirmPassword);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("confirmPassword"))).sendKeys(confirmPassword);
 	}
 
-//	public void clickSubmitBtn() {
-//		driver.findElement(By.xpath("//button[@type = 'submit']")).click();
-//	}
+	public void clickSubmitBtn() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@type = 'submit']"))).click();
+	}
 }
