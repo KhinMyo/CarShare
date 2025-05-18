@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" verbose="1">
+	<test name="Regression">
+		<classes>
+			<class name="carshare.TC_Signup" />
+			<class name="carshare.TC_HowCarShareWork" />
+			<class name="carshare.TC_AboutUs" />
+			<class name="carshare.TC_FindCar" />
+			<class name="carshare.TC_WhyCarShare" />
+			<class name="carshare.TC_SelfDriveTips" />
+			<class name="carshare.TC_WhyCarShare" />
+		</classes>
+	</test>
+</suite>

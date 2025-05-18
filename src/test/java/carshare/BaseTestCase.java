@@ -28,15 +28,6 @@ public class BaseTestCase {
 
 	@BeforeClass
 	public void beforeClass() {
-		driver.get("https://carshare.yomafleet.com");
-	}
-
-	@AfterClass
-	public void afterClass() {
-	}
-
-	@BeforeTest
-	public void beforeTest() {
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\DELL\\Downloads\\chromedriver-win64\\chromedriver.exe");
 		
@@ -46,7 +37,16 @@ public class BaseTestCase {
 				
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+		driver.get("https://carshare.yomafleet.com");
+	}
+
+	@AfterClass
+	public void afterClass() {
+	}
+
+	@BeforeTest
+	public void beforeTest() {
+		
 	}
 
 	@AfterTest

@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import AboutUs.AboutPage;
 
 public class TC_AboutUs extends BaseTestCase {
+
 	@Test
 	public void AboutUs() {
 
