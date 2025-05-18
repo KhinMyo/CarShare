@@ -1,10 +1,10 @@
 package Signup;
 
+import Common.CommonPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class SignupPage {
-	ChromeDriver driver;
+public class SignupPage extends CommonPage {
 
 	public SignupPage(ChromeDriver dvr) {
 		driver = dvr;

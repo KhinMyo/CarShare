@@ -14,7 +14,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class BaseTest {
+public class BaseTestCase {
 
 	public ChromeDriver driver;
 
@@ -51,13 +51,11 @@ public class BaseTest {
 
 	@AfterTest
 	public void afterTest() {
-//		driver.quit();
+		driver.quit();
 	}
 
 	@BeforeSuite
 	public void beforeSuite() {
-		
-//		initializeTestData();
 	}
 
 	@AfterSuite
