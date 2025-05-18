@@ -13,7 +13,7 @@ public class FindCarPage {
 	}
 
 	public void clickPickLocation() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		driver.findElement(By.cssSelector("div.select__dropdown-indicator")).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//*[text()='Bagan Airport , Bagan']")).click();
@@ -33,9 +33,8 @@ public class FindCarPage {
 		driver.findElement(By.xpath("//input[@name='return_date']")).click();
 		Thread.sleep(5000);
 //		driver.findElement(By.xpath("//*[local-name()='svg' and @xmlns='http://www.w3.org/2000/svg']")).click();
-		driver.findElement(By.xpath("//*[local-name()='svg' and @viewBox='0 0 17 17']" + "/*[local-name()='path' and "
-				+ "@d='M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z']"))
-				.click();
+		driver.findElement(By.xpath("/html[1]/body[1]/div[4]/div[1]/span[2]/*[name()='svg'][1]")).click();
+		
 		driver.findElement(By.xpath("//div[@class='dayContainer']//*[@aria-label= '" + returnDate + "']")).click();
 	}
 
@@ -44,7 +43,6 @@ public class FindCarPage {
 	}
 
 	public void clickFindCarBtn() {
-//		driver.findElement(By.xpath("//button[@id = 'SimulateButton' and @type = 'submit']")).click();
 		driver.findElement(By.id("SimulateButton")).click();
 	}
 }
