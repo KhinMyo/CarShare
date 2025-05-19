@@ -37,11 +37,13 @@ public class BaseTestCase {
 				
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get("https://carshare.yomafleet.com");
 	}
 
 	@AfterClass
 	public void afterClass() {
+		driver.quit();
 	}
 
 	@BeforeTest
@@ -51,7 +53,7 @@ public class BaseTestCase {
 
 	@AfterTest
 	public void afterTest() {
-		driver.quit();
+		
 	}
 
 	@BeforeSuite
